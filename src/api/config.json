@@ -1,0 +1,4 @@
+{
+  "issuer": "https://{oktaDomain}.okta.com/oauth2/default",
+  "clientId": "{oktaClientID}"
+}

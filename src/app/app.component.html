@@ -1,0 +1,21 @@
+<div class="w-screen h-screen flex items-center justify-center">
+  <div class="w-[70%]">
+    <div class="mb-10">
+      <div class="w-full flex items-center justify-center">
+        <button type="button" (click)="signIn()" *ngIf="!this.oktaAuth.getAccessToken()?.length" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
+          Login to OKTA
+        </button>
+        <div class="flex" *ngIf="this.oktaAuth.getAccessToken()?.length">
+          <button type="button" (click)="signOut()" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
+            Logout
+          </button>
+          <button type="button" (click)="copyToken()" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-blue-500 rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">
+            {{copied ? 'Copied!' : 'Copy Token'}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
